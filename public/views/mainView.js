@@ -2,7 +2,7 @@
     // import
     const Button = window.Button;
     const View = window.View;
-    const AbouTeamView = window.AbouTeamView;
+    const AbouTeam = window.AbouTeam;
 
     class MainView extends View {
         constructor(options = {}) {
@@ -53,11 +53,13 @@
                 this.router.go('/menu');
             } else {
                 this._el.style.display = 'block';
+                this.team._el.style.display = 'block';
             }
         }
 
         pause() {
             super.pause();
+            this.team._el.style.display = 'none';
         }
     }
 

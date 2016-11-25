@@ -2,7 +2,7 @@
     // import
     const Button = window.Button;
     const View = window.View;
-    const AbouTeamView = window.AbouTeamView;
+    const AbouTeam = window.AbouTeam;
     const Menu = window.Menu;
 
     class MenuView extends View {
@@ -67,6 +67,7 @@
         resume() {
             if (this.user.isAuth) {
                 this._el.style.display = 'block';
+                this.team._el.style.display = 'block';
                 document.querySelector('.about_acount_login').innerHTML = this.user.id;
             } else {
                 this.router.go('/');
@@ -75,6 +76,7 @@
 
         pause() {
             super.pause();
+            this.team._el.style.display = 'none';
         }
     }
 
