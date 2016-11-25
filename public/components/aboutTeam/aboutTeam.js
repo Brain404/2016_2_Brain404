@@ -17,9 +17,6 @@
             return this;
         }
 
-        // resume() {
-        //     super.resume();
-        // }
     }
 
     // export

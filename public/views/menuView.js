@@ -9,7 +9,7 @@
         constructor(options = {}) {
             super(options);
             this.user = options.user;
-            this.team = new AbouTeamView();
+            this.team = new AbouTeam();
             this._el = document.querySelector('.menu_container_view');
             this.createElements();
             this.addElements();
@@ -43,7 +43,7 @@
             document.querySelector('.menu_logout').addEventListener('click', (event) => {
                 this.submitLogout();
             });
-            document.querySelector('.about_acount').addEventListener('click', (event) => {
+            document.querySelector('.about__acount').addEventListener('click', (event) => {
                 this.router.go('/user');
             });
 
@@ -66,7 +66,7 @@
 
         resume() {
             if (this.user.isAuth) {
-                this._el.style.display = 'block'; this.team.resume();
+                this._el.style.display = 'block';
                 document.querySelector('.about_acount_login').innerHTML = this.user.id;
             } else {
                 this.router.go('/');
@@ -75,7 +75,6 @@
 
         pause() {
             super.pause();
-            this.team.pause();
         }
     }
 

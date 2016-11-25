@@ -20,12 +20,12 @@
         setList(list) {
             let str = '';
             if (this.id) {
-                str += `<div class="about_acount"><a class="ui pink label ">
-                	  <i class="child icon big"></i>
-                	  <span class="about_acount_login">${this.id}</span>
-                	</a></div>`;
+                str += `<div class="about__acount"><a class="ui pink label ">
+                      <i class="child icon big"></i>
+                      <span class="about_acount_login">${this.id}</span>
+                    </a></div>`;
             } else {
-                str += `<div class="about_acount"></div>`;
+                str += `<div class="about__acount"></div>`;
             }
             list.forEach((element) => {
                 let _template = window.fest['components/menu/menu.tmpl'](element);

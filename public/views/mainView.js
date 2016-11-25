@@ -8,7 +8,7 @@
         constructor(options = {}) {
             super(options);
             this.user = options.user;
-            this.team = new AbouTeamView();
+            this.team = new AbouTeam();
             this._el = document.querySelector('.main_container_view');
             this.createElements();
             this.addElements();
@@ -52,13 +52,12 @@
             if (this.user.isAuth) {
                 this.router.go('/menu');
             } else {
-                this._el.style.display = 'block'; this.team.resume();
+                this._el.style.display = 'block';
             }
         }
 
         pause() {
             super.pause();
-            this.team.pause();
         }
     }
 
