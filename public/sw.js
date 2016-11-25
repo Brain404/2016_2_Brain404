@@ -5,11 +5,6 @@ const cacheUrls = [
     '/',
     '/css/milligram.min.css',
     '/css/main.css',
-    '/css/maze.css',
-    '/components/button/button.css',
-    '/components/form/form.css',
-    '/components/message/message.css',
-    '/components/scoreboard/scoreboard.css',
 
     '/modules/pathToRegex.js',
     '/modules/view.js',
@@ -29,6 +24,8 @@ const cacheUrls = [
     '/components/message/message.js',
     '/components/scoreboard/scoreboard.tmpl.js',
     '/components/scoreboard/scoreboard.js',
+    '/components/aboutTeam/aboutTeam.js',
+    '/components/aboutTeam/aboutTeam.tmpl.js',
 
     '/game/keymaster.js',
     '/game/player.js',
@@ -43,8 +40,6 @@ const cacheUrls = [
     '/views/loginView.js',
     '/views/formView.js',
     '/views/aboutUserView.js',
-    '/views/aboutTeamView.js',
-    '/views/aboutTeamView.tmpl.js',
 
     '/main.js',
     '/jquery.min.js',
