@@ -3,7 +3,6 @@ const CACHE_NAME = 'app_serviceworker_v_2';
 // ссылки на кэшируемые файлы
 const cacheUrls = [
     '/',
-    '/css/milligram.min.css',
     '/css/main.css',
 
     '/semantic/dist/semantic.min.css',
