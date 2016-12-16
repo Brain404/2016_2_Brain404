@@ -17,6 +17,9 @@
 
             this.oldX = 0;
             this.oldY = 0;
+
+            this.newStatex = this.x;
+            this.newStatey = this.y;
         }
 
         update(dt) {
@@ -26,52 +29,23 @@
 
         draw(ctx) {
             ctx.clearRect(0, 0, 1024, 768);
-            let animal = ctx.drawImage(this.img, 593, 595, 284, 285, this.x - (this.r / 2), this.y - (this.r / 2), this.r, this.r);
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+            ctx.fill();
+            // let animal = ctx.drawImage(this.img, 593, 595, 284, 285, this.x - (this.r / 2), this.y - (this.r / 2), this.r, this.r);
         }
 
-        checkRectIntersection(rect, action) {
-            let result = {
-                px: false,
-                py: false,
-                mx: false,
-                my: false,
-            };
+        checkRectIntersection(rect) {
 
-            if (this.x + (this.r / 2) > rect.width) {
-                result.mx = true;
+            if ((this.newStatey + this.r < rect.height) && (this.newStatey - this.r > 0)) {
+                this.y = this.newStatey;
             }
 
-            if (this.y + (this.r / 2) > rect.height) {
-                result.my = true;
-            }
-            if (this.x - (this.r / 2) < 0) {
-                result.px = true;
+            if ((this.newStatex - this.r > 0) && (this.newStatex + this.r < rect.width)) {
+                this.x = this.newStatex;
             }
 
-            if (this.y - (this.r / 2) < 0) {
-                result.py = true;
-            }
-
-            this[action](result);
-        }
-
-        reflect(result) {
-            if (result.mx) {
-                this.vx = 0;
-                this.x -= 1;
-            }
-            if (result.my) {
-                this.vy = 0;
-                this.y -= 1;
-            }
-            if (result.px) {
-                this.vx = 0;
-                this.x += 1;
-            }
-            if (result.py) {
-                this.vy = 0;
-                this.y += 1;
-            }
         }
 
         dv({ dvx = 0, dvy = 0 }) {
@@ -88,19 +62,22 @@
             this.oldY = this.y;
         }
 
-        goBack() {
-            if (this.x > this.oldX) {
-                this.x = this.oldX - 1;
+        goBack(opt) {
+            if (opt.py) {
+                this.y = 0 + this.r;
             }
-            else {
-                this.x = this.oldX + 1;
-            }
-
-            if (this.y > this.oldY) {
-                this.y = this.oldY - 1;
-            } else {
-                this.y = this.oldY + 1;
-            }
+            // if (this.x > this.oldX) {
+            //     this.x = this.oldX - 1;
+            // }
+            // else {
+            //     this.x = this.oldX + 1;
+            // }
+            //
+            // if (this.y > this.oldY) {
+            //     this.y = this.oldY - 1;
+            // } else {
+            //     this.y = this.oldY + 1;
+            // }
         }
 
         checkMazeIntersection() {

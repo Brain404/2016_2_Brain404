@@ -5,17 +5,17 @@
     .map((_, i) => Math.round(Math.random() * max));
 
     class Field {
-        constructor({ width, hight, img }) {
+        constructor({ width, hight, img, ctx }) {
             console.log('createField');
-            this.createField();
-            this.tryWs();
             this.hight = width;
             this.width = hight;
             this.img = img;
+            this.ctx = ctx;
         }
 
-        draw(ctx) {
-            this.fill(ctx);
+        draw() {
+            this.ctx.clearRect(0, 0, this.width, this.hight);
+            // this.fill(ctx);
         }
 
         createField() {
@@ -43,7 +43,7 @@
             return this.field;
         }
 
-        tryWs() {
+        tryWs(event) {
             // Выбираем по какому протоколу будет производиться соединение
             const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
 
@@ -70,6 +70,7 @@
                 console.log(message);
                 console.log(message.data);
                 ws.close();
+                this.dispatchEvent(event);
             };
 
             // обработчик закрытия сокета
