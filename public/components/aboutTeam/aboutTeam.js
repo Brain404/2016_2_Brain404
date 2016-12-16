@@ -3,7 +3,7 @@
 
     class AbouTeam {
         constructor(options = {}) {
-            this._el = document.querySelector('.about_team');
+            this._el = document.querySelector('.about-team');
             this.render();
         }
 

@@ -32,13 +32,13 @@
         }
 
         addListeners() {
-            document.querySelector('.menu_login').addEventListener('click', (event) => {
+            document.querySelector('.menu__login').addEventListener('click', (event) => {
                 this.router.go('/login');
             });
-            document.querySelector('.menu_scoreboard').addEventListener('click', (event) => {
+            document.querySelector('.menu__scoreboard').addEventListener('click', (event) => {
                 this.router.go('/scoreboard');
             });
-            document.querySelector('.menu_register').addEventListener('click', (event) => {
+            document.querySelector('.menu__register').addEventListener('click', (event) => {
                 this.router.go('/register');
             });
         }

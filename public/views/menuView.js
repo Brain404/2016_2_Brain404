@@ -34,13 +34,13 @@
         }
 
         addListeners() {
-            document.querySelector('.menu_scoreboard2').addEventListener('click', (event) => {
+            document.querySelector('.menu__scoreboard2').addEventListener('click', (event) => {
                 this.router.go('/scoreboard');
             });
-            document.querySelector('.menu_play').addEventListener('click', (event) => {
+            document.querySelector('.menu__play').addEventListener('click', (event) => {
                 this.router.go('/game');
             });
-            document.querySelector('.menu_logout').addEventListener('click', (event) => {
+            document.querySelector('.menu__logout').addEventListener('click', (event) => {
                 this.submitLogout();
             });
             document.querySelector('.about__acount').addEventListener('click', (event) => {

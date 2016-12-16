@@ -18,20 +18,10 @@
         }
 
         setList(list) {
-            let str = '';
-            if (this.id) {
-                str += `<div class="about__acount"><a class="ui pink label ">
-                      <i class="child icon big"></i>
-                      <span class="about_acount_login">${this.id}</span>
-                    </a></div>`;
-            } else {
-                str += `<div class="about__acount"></div>`;
-            }
-            list.forEach((element) => {
-                let _template = window.fest['components/menu/menu.tmpl'](element);
-                str += _template;
-            });
-            this.el.innerHTML = str;
+            this.list = list;
+            let _template = window.fest['components/menu/menu.tmpl'](this);
+
+            this.el.innerHTML = _template;
         }
 
         setClassAttrs(classAttrs) {
