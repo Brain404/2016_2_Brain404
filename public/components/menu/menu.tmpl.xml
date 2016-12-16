@@ -1,25 +1,25 @@
-<fest:template xmlns:fest="http://fest.mail.ru" context_name="element">
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="data">
     <div class="about__acount">
         <a class="ui pink label ">
             <i class="child icon big"></i>
             <fest:element name="span" class="about_acount_login">
-                <fest:value>element.id</fest:value>
+                <fest:value>data.id</fest:value>
             </fest:element>
         </a>
     </div>
-    <fest:for iterate="element.list" index="i">
+    <fest:for iterate="data.list" index="i">
     <a href="" onClick="return false">
         <fest:attributes>
-            <fest:attribute name="class" value="item menu__{element.list[i].clas}"/>
+            <fest:attribute name="class" value="item menu__{data.list[i].clas}"/>
         </fest:attributes>
         <i>
             <fest:attributes>
-                <fest:attribute name="class" value="{element.list[i].iconClass}"/>
+                <fest:attribute name="class" value="{data.list[i].iconClass}"/>
             </fest:attributes>
         </i>
         <fest:element name="label">
-            <fest:value>element.list[i].lable</fest:value>
+            <fest:value>data.list[i].lable</fest:value>
         </fest:element>
     </a>
-</fest:for>
+    </fest:for>
 </fest:template>

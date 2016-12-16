@@ -31,9 +31,9 @@ dialog::backdrop {
   background-color: $rgba8;
 }
 
-.form_float{
+.form {
   float: $form_float;
 }
-.close_icon:hover{
+.form__close:hover{
   cursor: pointer;
 }

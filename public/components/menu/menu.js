@@ -20,7 +20,6 @@
         setList(list) {
             this.list = list;
             let _template = window.fest['components/menu/menu.tmpl'](this);
-
             this.el.innerHTML = _template;
         }
 
